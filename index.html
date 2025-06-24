@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{ menuOpen: false }">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prashant Rana Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar" x-data="{ open: false }">
+        <div class="container">
+            <a href="#" class="logo">Prashant Rana</a>
+            <button class="menu-toggle" @click="open = !open">☰</button>
+            <ul :class="{ 'active': open }" class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <img class="Profile" src="img/Prashant-Rana.png" alt="Profile pic" />
+            <h1>I'm <span class="typed-text" id="typed"></span></h1>
+            <p>
+                A frontend developer crafting interactive, culturally relevant web
+                experiences with clean code and creative flair.
+            </p>
+            <div class="buttons">
+                <a href="#projects" class="btn primary">See My Work</a>
+                <a href="#contact" class="btn outline">Let’s Connect</a>
+            </div>
+            <p class="tagline">Fueled by chai, pixels, and rupee-driven UI nuance.</p>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="about-container">
+            <h2>About Me</h2>
+            <p>
+                I'm Prashant Rana—a front-end developer with a strong eye for design detail and a heart for clean,
+                responsive code. I specialize in creating interfaces that don't just look great, but also feel intuitive
+                and culturally connected.
+            </p>
+            <p>
+                My passion lies in building modern web experiences that reflect real users—from rupee-formatted pricing
+                to seamless product interactions. With every project, I focus on delivering clarity, accessibility, and
+                that extra spark of delight.
+            </p>
+
+            <div class="about-details">
+                <div class="detail-column">
+                    <h3>🎓 Academic Background</h3>
+                    <ul>
+                        <li><strong>Bachelor’s in Computer Science</strong> — XYZ University (2021)</li>
+                        <li>Specialized in web development, UI/UX, and responsive design principles</li>
+                    </ul>
+                </div>
+
+                <div class="detail-column">
+                    <h3>💼 Professional Experience</h3>
+                    <ul>
+                        <li><strong>Front-End Developer (Freelance)</strong></li>
+                        <li>Created sleek cart experiences, dynamic grids, and interactive components</li>
+                        <li>Tech stack: HTML, CSS, JavaScript, Alpine.js, and creative problem-solving</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="skills" class="skills">
+        <div class="skills-container">
+            <h2>My Skills</h2>
+            <p class="skills-intro">Interactive. Responsive. Thoughtful. Here’s what I bring to every build.</p>
+
+            <div class="skill-grid">
+                <!-- Flip Card -->
+                <div class="flip-card">
+                    <div class="flip-inner">
+                        <div class="flip-front">
+                            <img src="img/html-icon.png" alt="HTML Icon" />
+                            <h3>HTML5</h3>
+                        </div>
+                        <div class="flip-back">
+                            <p>Clean, semantic structure that forms the core of every user-facing interface.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-inner">
+                        <div class="flip-front">
+                            <img src="img/css-icon.png" alt="CSS Icon" />
+                            <h3>CSS3</h3>
+                        </div>
+                        <div class="flip-back">
+                            <p>Responsive layouts, animation finesse, and visual storytelling through styles.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-inner">
+                        <div class="flip-front">
+                            <img src="img/js-icon.png" alt="JavaScript Icon" />
+                            <h3>JavaScript</h3>
+                        </div>
+                        <div class="flip-back">
+                            <p>Adding logic, flow, and dynamic flair to every interaction.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-inner">
+                        <div class="flip-front">
+                            <img src="img/alpine-icon.png" alt="AlpineJS Icon" />
+                            <h3>Alpine.js</h3>
+                        </div>
+                        <div class="flip-back">
+                            <p>Simplifying interactivity with modern patterns—lightweight and powerful.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificate Section -->
+    <section id="certificates" class="certificates">
+        <div class="certificates-container">
+            <h2>My Certifications</h2>
+            <p class="cert-intro">Validating skill through consistent learning. View or download my proof of progress:
+            </p>
+            <div class="cert-grid">
+                <a href="certificates/frontend-cert.pdf" class="cert-link" target="_blank">Frontend Development
+                    Certificate</a>
+                <a href="certificates/uiux-cert.pdf" class="cert-link" target="_blank">UI/UX Design Certificate</a>
+                <a href="certificates/alpine-cert.pdf" class="cert-link" target="_blank">Alpine.js Interactive UI
+                    Certificate</a>
+            </div>
+        </div>
+    </section>
+    <section id="projects" class="projects">
+        <div class="projects-container">
+            <h2>My Projects</h2>
+            <p class="projects-intro">A showcase of my front-end creativity and real-world web solutions.</p>
+
+            <div class="project-grid">
+
+                <!-- Project Item -->
+                <div class="project-card">
+                    <figure>
+                        <img src="img/cart-redesign.png" alt="Cart Redesign UI" />
+                    </figure>
+                    <div class="project-details">
+                        <h3>Slide-Out Cart UI</h3>
+                        <p>A custom Alpine.js-powered cart with responsive design and rupee-specific logic.</p>
+                        <ul class="tech-tags">
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>Alpine.js</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://your-demo-link.com" target="_blank">🔗 Live Demo</a>
+                            <a href="https://github.com/yourusername/cart-ui" target="_blank">💻 GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Item -->
+                <div class="project-card">
+                    <figure>
+                        <img src="img/product-grid.png" alt="Localized Product Grid" />
+                    </figure>
+                    <div class="project-details">
+                        <h3>Localized Product Grid</h3>
+                        <p>Designed with authentic rupee pricing and cultural imagery for a tailored user experience.
+                        </p>
+                        <ul class="tech-tags">
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://your-project-link.com" target="_blank">🔗 Live</a>
+                            <a href="https://github.com/yourusername/product-grid" target="_blank">💻 GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Item -->
+                <div class="project-card">
+                    <figure>
+                        <img src="img/portfolio-site.png" alt="Personal Portfolio" />
+                    </figure>
+                    <div class="project-details">
+                        <h3>Developer Portfolio</h3>
+                        <p>This very site—crafted with Alpine.js, responsive design, and clean visual storytelling.</p>
+                        <ul class="tech-tags">
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>Alpine.js</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="#" target="_blank">🔗 Visit</a>
+                            <a href="https://github.com/yourusername/portfolio" target="_blank">💻 GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="contact">
+        <div class="contact-container">
+            <h2>Let’s Connect</h2>
+            <p class="contact-intro">Open to collaborations, freelance gigs, or just a quick hello!</p>
+
+            <a href="mailto:youremail@example.com" class="email-link">youremail@example.com</a>
+
+            <div class="social-icons">
+                <a href="https://github.com/yourusername" target="_blank" class="social"><i
+                        class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/yourusername" target="_blank" class="social"><i
+                        class="fab fa-linkedin-in"></i></a>
+                <a href="https://twitter.com/yourusername" target="_blank" class="social"><i
+                        class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com/yourusername" target="_blank" class="social"><i
+                        class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
