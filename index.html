@@ -1,249 +1,256 @@
 <!DOCTYPE html>
-<html lang="en" x-data="{ menuOpen: false }">
-
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Prashant Rana Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Prashant Rana | Web Developer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="assets/favicon.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
-
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar" x-data="{ open: false }">
-        <div class="container">
-            <a href="#" class="logo">Prashant Rana</a>
-            <button class="menu-toggle" @click="open = !open">☰</button>
-            <ul :class="{ 'active': open }" class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+
+  <!-- 🌐 Navbar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="logo">Prashant</div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#certificates">Certificates</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 🎯 Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-wrapper">
+      <div class="hero-image">
+        <img src="assets/Prashant-Rana.png" alt="Prashant Rana">
+      </div>
+      <div class="hero-content">
+        <h1>Hi, I'm <span id="typed-text"></span></h1>
+        <p class="hero-sub">
+          A passionate front-end developer who designs & builds experiences <br/>
+          with precision, purpose, and a touch of cultural flair.
+        </p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn">🚀 View Projects</a>
+          <a href="assets/resume.pdf" class="btn alt" download>
+            <i class="fas fa-download"></i> Resume
+          </a>
         </div>
-    </nav>
+      </div>
+    </div>
+  </section>
+<!-- 💼 About Section -->
+<section id="about" class="about-section">
+  <div class="content-wrapper">
+    <h2>About Me</h2>
+    <p class="about-intro">
+      I’m Prashant Rana — a detail-obsessed developer who transforms designs into functional, responsive interfaces. Whether it's refining a cart panel with Alpine.js or crafting a culturally-tuned product grid with rupee pricing, I build experiences users trust and enjoy.
+    </p>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <img class="Profile" src="img/Prashant-Rana.png" alt="Profile pic" />
-            <h1>I'm <span class="typed-text" id="typed"></span></h1>
-            <p>
-                A frontend developer crafting interactive, culturally relevant web
-                experiences with clean code and creative flair.
-            </p>
-            <div class="buttons">
-                <a href="#projects" class="btn primary">See My Work</a>
-                <a href="#contact" class="btn outline">Let’s Connect</a>
-            </div>
-            <p class="tagline">Fueled by chai, pixels, and rupee-driven UI nuance.</p>
+    <div class="about-columns">
+      <div class="about-card">
+        <h3>🎓 Education</h3>
+        <ul>
+          <li>BSc in Computer Science — XYZ University</li>
+          <li>Graduated 2021 with Honors</li>
+        </ul>
+      </div>
+      <div class="about-card">
+        <h3>💼 Experience</h3>
+        <ul>
+          <li>Freelance front-end developer (2021–now)</li>
+          <li>Focused on e-commerce UI/UX with Alpine.js & Tailwind</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 🧰 Skills Section -->
+<section id="skills" class="skills-section">
+  <div class="content-wrapper">
+    <h2>My Toolbox</h2>
+    <div class="skills-grid">
+      <!-- Skill Card 1 -->
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="assets/html-icon.svg" alt="HTML5" />
+            <h3>HTML5</h3>
+          </div>
+          <div class="flip-back">
+            <p>Semantic layout, accessibility-first markup, built for performance.</p>
+          </div>
         </div>
-    </section>
+      </div>
 
-    <section id="about" class="about">
-        <div class="about-container">
-            <h2>About Me</h2>
-            <p>
-                I'm Prashant Rana—a front-end developer with a strong eye for design detail and a heart for clean,
-                responsive code. I specialize in creating interfaces that don't just look great, but also feel intuitive
-                and culturally connected.
-            </p>
-            <p>
-                My passion lies in building modern web experiences that reflect real users—from rupee-formatted pricing
-                to seamless product interactions. With every project, I focus on delivering clarity, accessibility, and
-                that extra spark of delight.
-            </p>
-
-            <div class="about-details">
-                <div class="detail-column">
-                    <h3>🎓 Academic Background</h3>
-                    <ul>
-                        <li><strong>Bachelor’s in Computer Science</strong> — XYZ University (2021)</li>
-                        <li>Specialized in web development, UI/UX, and responsive design principles</li>
-                    </ul>
-                </div>
-
-                <div class="detail-column">
-                    <h3>💼 Professional Experience</h3>
-                    <ul>
-                        <li><strong>Front-End Developer (Freelance)</strong></li>
-                        <li>Created sleek cart experiences, dynamic grids, and interactive components</li>
-                        <li>Tech stack: HTML, CSS, JavaScript, Alpine.js, and creative problem-solving</li>
-                    </ul>
-                </div>
-            </div>
+      <!-- Skill Card 2 -->
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="assets/css-icon.svg" alt="CSS3" />
+            <h3>CSS3</h3>
+          </div>
+          <div class="flip-back">
+            <p>Responsive design, grid systems, animation, and utility-first styling.</p>
+          </div>
         </div>
-    </section>
-    <section id="skills" class="skills">
-        <div class="skills-container">
-            <h2>My Skills</h2>
-            <p class="skills-intro">Interactive. Responsive. Thoughtful. Here’s what I bring to every build.</p>
+      </div>
 
-            <div class="skill-grid">
-                <!-- Flip Card -->
-                <div class="flip-card">
-                    <div class="flip-inner">
-                        <div class="flip-front">
-                            <img src="img/html-icon.png" alt="HTML Icon" />
-                            <h3>HTML5</h3>
-                        </div>
-                        <div class="flip-back">
-                            <p>Clean, semantic structure that forms the core of every user-facing interface.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flip-card">
-                    <div class="flip-inner">
-                        <div class="flip-front">
-                            <img src="img/css-icon.png" alt="CSS Icon" />
-                            <h3>CSS3</h3>
-                        </div>
-                        <div class="flip-back">
-                            <p>Responsive layouts, animation finesse, and visual storytelling through styles.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flip-card">
-                    <div class="flip-inner">
-                        <div class="flip-front">
-                            <img src="img/js-icon.png" alt="JavaScript Icon" />
-                            <h3>JavaScript</h3>
-                        </div>
-                        <div class="flip-back">
-                            <p>Adding logic, flow, and dynamic flair to every interaction.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flip-card">
-                    <div class="flip-inner">
-                        <div class="flip-front">
-                            <img src="img/alpine-icon.png" alt="AlpineJS Icon" />
-                            <h3>Alpine.js</h3>
-                        </div>
-                        <div class="flip-back">
-                            <p>Simplifying interactivity with modern patterns—lightweight and powerful.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <!-- Skill Card 3 -->
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="assets/js-icon.svg" alt="JavaScript" />
+            <h3>JavaScript</h3>
+          </div>
+          <div class="flip-back">
+            <p>Custom logic, interactivity, and DOM control for intuitive UIs.</p>
+          </div>
         </div>
-    </section>
+      </div>
 
-    <!-- Certificate Section -->
-    <section id="certificates" class="certificates">
-        <div class="certificates-container">
-            <h2>My Certifications</h2>
-            <p class="cert-intro">Validating skill through consistent learning. View or download my proof of progress:
-            </p>
-            <div class="cert-grid">
-                <a href="certificates/frontend-cert.pdf" class="cert-link" target="_blank">Frontend Development
-                    Certificate</a>
-                <a href="certificates/uiux-cert.pdf" class="cert-link" target="_blank">UI/UX Design Certificate</a>
-                <a href="certificates/alpine-cert.pdf" class="cert-link" target="_blank">Alpine.js Interactive UI
-                    Certificate</a>
-            </div>
+      <!-- Skill Card 4 -->
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="assets/alpine-icon.svg" alt="Alpine.js" />
+            <h3>Alpine.js</h3>
+          </div>
+          <div class="flip-back">
+            <p>Lightweight JS framework for toggles, panels, and state-driven UI.</p>
+          </div>
         </div>
-    </section>
-    <section id="projects" class="projects">
-        <div class="projects-container">
-            <h2>My Projects</h2>
-            <p class="projects-intro">A showcase of my front-end creativity and real-world web solutions.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-            <div class="project-grid">
+<!-- 🎓 Certificates Section -->
+<section id="certificates" class="certificates-section">
+  <div class="content-wrapper">
+    <h2>Certificates</h2>
+    <p class="certificate-intro">
+      Here are a few certifications that validate my passion and dedication.
+    </p>
 
-                <!-- Project Item -->
-                <div class="project-card">
-                    <figure>
-                        <img src="img/cart-redesign.png" alt="Cart Redesign UI" />
-                    </figure>
-                    <div class="project-details">
-                        <h3>Slide-Out Cart UI</h3>
-                        <p>A custom Alpine.js-powered cart with responsive design and rupee-specific logic.</p>
-                        <ul class="tech-tags">
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>Alpine.js</li>
-                        </ul>
-                        <div class="project-links">
-                            <a href="https://your-demo-link.com" target="_blank">🔗 Live Demo</a>
-                            <a href="https://github.com/yourusername/cart-ui" target="_blank">💻 GitHub</a>
-                        </div>
-                    </div>
-                </div>
+    <div class="cert-grid">
+      <a href="assets/certificates/frontend.pdf" target="_blank">Frontend Developer</a>
+      <a href="assets/certificates/uiux.pdf" target="_blank">UI/UX Design Fundamentals</a>
+      <a href="assets/certificates/alpine.pdf" target="_blank">Alpine.js Essentials</a>
+    </div>
+  </div>
+</section>
+<!-- 🗂️ Projects Section -->
+<section id="projects" class="projects-section">
+  <div class="content-wrapper">
+    <h2>Featured Projects</h2>
+    <div class="project-grid">
 
-                <!-- Project Item -->
-                <div class="project-card">
-                    <figure>
-                        <img src="img/product-grid.png" alt="Localized Product Grid" />
-                    </figure>
-                    <div class="project-details">
-                        <h3>Localized Product Grid</h3>
-                        <p>Designed with authentic rupee pricing and cultural imagery for a tailored user experience.
-                        </p>
-                        <ul class="tech-tags">
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>JavaScript</li>
-                        </ul>
-                        <div class="project-links">
-                            <a href="https://your-project-link.com" target="_blank">🔗 Live</a>
-                            <a href="https://github.com/yourusername/product-grid" target="_blank">💻 GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Item -->
-                <div class="project-card">
-                    <figure>
-                        <img src="img/portfolio-site.png" alt="Personal Portfolio" />
-                    </figure>
-                    <div class="project-details">
-                        <h3>Developer Portfolio</h3>
-                        <p>This very site—crafted with Alpine.js, responsive design, and clean visual storytelling.</p>
-                        <ul class="tech-tags">
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>Alpine.js</li>
-                        </ul>
-                        <div class="project-links">
-                            <a href="#" target="_blank">🔗 Visit</a>
-                            <a href="https://github.com/yourusername/portfolio" target="_blank">💻 GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+      <!-- Project 1 -->
+      <div class="project-card">
+        <img src="assets/cart-redesign.jpg" alt="Cart UI Redesign" />
+        <div class="project-details">
+          <h3>🛒 Slide-Out Cart UI</h3>
+          <p>A custom Alpine.js-powered cart with responsive rupee pricing and dynamic item logic.</p>
+          <ul class="tech-tags">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Alpine.js</li>
+          </ul>
+          <div class="project-links">
+            <a href="#">🔗 Live Demo</a>
+            <a href="#">💻 GitHub</a>
+          </div>
         </div>
-    </section>
-    <section id="contact" class="contact">
-        <div class="contact-container">
-            <h2>Let’s Connect</h2>
-            <p class="contact-intro">Open to collaborations, freelance gigs, or just a quick hello!</p>
+      </div>
 
-            <a href="mailto:youremail@example.com" class="email-link">youremail@example.com</a>
-
-            <div class="social-icons">
-                <a href="https://github.com/yourusername" target="_blank" class="social"><i
-                        class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/yourusername" target="_blank" class="social"><i
-                        class="fab fa-linkedin-in"></i></a>
-                <a href="https://twitter.com/yourusername" target="_blank" class="social"><i
-                        class="fab fa-twitter"></i></a>
-                <a href="https://instagram.com/yourusername" target="_blank" class="social"><i
-                        class="fab fa-instagram"></i></a>
-            </div>
+      <!-- Project 2 -->
+      <div class="project-card">
+        <img src="assets/product-grid.jpg" alt="Localized Product Grid" />
+        <div class="project-details">
+          <h3>🛍️ Product Grid UI</h3>
+          <p>Grid of products with culturally accurate rupee formatting and responsive item scaling.</p>
+          <ul class="tech-tags">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+          </ul>
+          <div class="project-links">
+            <a href="#">🔗 Demo</a>
+            <a href="#">💻 GitHub</a>
+          </div>
         </div>
-    </section>
+      </div>
 
-    <script src="script.js"></script>
+      <!-- Project 3 -->
+      <div class="project-card">
+        <img src="assets/portfolio-site.jpg" alt="Portfolio Screenshot" />
+        <div class="project-details">
+          <h3>🌐 Developer Portfolio</h3>
+          <p>You're looking at it! Designed with custom CSS and animated JavaScript interactions.</p>
+          <ul class="tech-tags">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JS</li>
+          </ul>
+          <div class="project-links">
+            <a href="#">🔗 Live</a>
+            <a href="#">💻 GitHub</a>
+          </div>
+        </div>
+      </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- 🌟 Unified Footer -->
+<footer class="footer">
+  <div class="content-wrapper">
+    <h2 class="footer-title">Let's Connect</h2>
+    <p class="footer-text">
+      Got a project, an idea, or just want to say hello?<br/>
+      I'm always open to new collaborations and conversations.
+    </p>
+
+    <!-- Email Link -->
+    <a href="mailto:youremail@example.com" class="footer-email">
+      <i class="fas fa-envelope"></i> youremail@example.com
+    </a>
+
+    <!-- Social Links -->
+    <div class="footer-socials">
+      <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+    </div>
+
+    <!-- Final Note -->
+    <p class="footer-copy">
+      Crafted with ❤️ by Prashant Rana<br/>
+      © 2025 — All rights reserved.
+    </p>
+  </div>
+</footer>
+
+
+<!-- ⬆️ Scroll-to-Top Button -->
+<button id="scrollTopBtn" title="Back to top">
+  <i class="fas fa-chevron-up"></i>
+</button>
+
+<!-- JavaScript -->
+<script src="script.js"></script>
 </body>
-
 </html>
