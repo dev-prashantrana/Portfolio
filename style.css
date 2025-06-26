@@ -254,6 +254,10 @@ ul {
   color: #d1d5db;
 }
 
+.invert {
+  filter: invert(100%);
+}
+
 /* 🗂️ PROJECTS */
 .projects-section {
   background: #1a1a2e;
